@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ИТАЛКОФЕ — кофейная компания в Екатеринбурге</title>
+<meta name="description" content="Кофе в зёрнах и капсулах, сиропы, чай, аренда и сервис кофемашин для HoReCa. Оптовые цены, доставка по Екатеринбургу." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=2">
+</head>
+<body>
+
+<div class="noise" aria-hidden="true"></div>
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a href="#top" class="logo" aria-label="ИТАЛКОФЕ — на главную">
+      <svg class="logo-mark" width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="20" cy="20" r="19" fill="#FBF3E7" stroke="rgba(27,18,20,0.08)"/>
+        <path d="M15.3 12.7c1.3-1.6.2-2.5-.3-3.8" stroke="#8C1F35" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.6"/>
+        <path d="M20.3 12.7c1.3-1.6.2-2.5-.3-3.8" stroke="#8C1F35" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.6"/>
+        <path d="M11 15h15l-1.1 11.2a6.5 4 0 0 1-12.8 0z" fill="#8C1F35"/>
+        <path d="M25.8 18.3h2a2.9 2.9 0 0 1 0 5.8h-1.4" fill="none" stroke="#8C1F35" stroke-width="2" stroke-linecap="round"/>
+        <rect x="9" y="27.6" width="20" height="2.1" rx="1.05" fill="#8C1F35"/>
+      </svg>
+      <span class="logo-text">ИТАЛКОФЕ<em>кофейная компания</em></span>
+    </a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="#catalog">Каталог</a>
+      <a href="#rent">Аренда кофемашин</a>
+      <a href="#service">Сервис</a>
+      <a href="#about">О компании</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <div class="header-actions">
+      <a href="tel:+73433110235" class="header-phone">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8C8.1 13.7 10.3 15.9 13.2 17.4L15.4 15.2C15.7 14.9 16.1 14.8 16.5 15C17.8 15.4 19.2 15.7 20.6 15.7C21.1 15.7 21.5 16.1 21.5 16.6V20.4C21.5 20.9 21.1 21.3 20.6 21.3C10.5 21.3 2.7 13.5 2.7 3.4C2.7 2.9 3.1 2.5 3.6 2.5H7.4C7.9 2.5 8.3 2.9 8.3 3.4C8.3 4.8 8.6 6.2 9 7.5C9.1 7.9 9 8.3 8.7 8.6L6.6 10.8Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <span>+7 343 311‑02‑35</span>
+      </a>
+      <button class="cart-btn" id="cartBtn" aria-label="Корзина">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M3 4h2l1.6 10.6a2 2 0 0 0 2 1.7h8.4a2 2 0 0 0 2-1.6L20 8H6.2" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9.5" cy="20" r="1.4" fill="currentColor"/><circle cx="17" cy="20" r="1.4" fill="currentColor"/></svg>
+        <span class="cart-count" id="cartCount" hidden>0</span>
+      </button>
+      <a href="#cta" class="btn btn-accent header-cta">Оставить заявку</a>
+      <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="wrap hero-inner">
+      <div class="hero-copy reveal">
+        <p class="eyebrow">Оптовые поставки для HoReCa · Екатеринбург</p>
+        <h1>Итальянский характер кофе.<br>Уральская надёжность сервиса.</h1>
+        <p class="hero-lede">Кофе в зёрнах и капсулах, сиропы, чай, расходники — и полное обслуживание кофемашин: аренда, ремонт, выездной кофейный бар. Работаем с кофейнями, офисами и HoReCa под ключ.</p>
+        <div class="hero-actions">
+          <a href="#catalog" class="btn btn-accent">Смотреть каталог</a>
+          <a href="#cta" class="btn btn-ghost">Заказать звонок</a>
+        </div>
+        <div class="hero-stats">
+          <div><strong>15+</strong><span>лет на рынке</span></div>
+          <div><strong>500+</strong><span>товаров в каталоге</span></div>
+          <div><strong>24ч</strong><span>доставка по Екатеринбургу</span></div>
+        </div>
+      </div>
+      <div class="hero-visual reveal" aria-hidden="true">
+        <div class="bento">
+          <div class="bento-tile bento-a">
+            <div class="bean-pattern"></div>
+            <span class="bento-icon">☕</span>
+            <h3>Зерновой кофе — опт и розница</h3>
+            <p>Прямые поставки зелёного и обжаренного зерна: большими партиями для HoReCa и штучно для гурманов</p>
+          </div>
+          <div class="bento-tile bento-b">
+            <span class="bento-icon">🏢</span>
+            <h4>Корпоративным клиентам</h4>
+            <p>Кофе, чай и сервис под контракт для офисов и сетей</p>
+          </div>
+          <div class="bento-tile bento-c">
+            <span class="bento-icon">⚖</span>
+            <h4>Опт от 1 кг</h4>
+            <p>Гибкие партии под ваш объём закупки</p>
+          </div>
+          <div class="bento-tile bento-d">
+            <span class="bento-icon">★</span>
+            <div>
+              <h4>Розница для гурманов</h4>
+              <p>Редкие сорта и авторские купажи поштучно</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="catalog" id="catalog">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Каталог</p>
+        <h2>Всё для кофейной точки — в одном месте</h2>
+      </div>
+      <div class="tab-bar reveal" role="tablist">
+        <button class="tab-btn active" data-tab="coffee" role="tab" aria-selected="true">☕ Кофе</button>
+        <button class="tab-btn" data-tab="tea" role="tab" aria-selected="false">🍵 Чай</button>
+        <button class="tab-btn" data-tab="service" role="tab" aria-selected="false">⚙ Сервис</button>
+      </div>
+
+      <div class="tab-panels reveal">
+
+        <div class="tab-panel active" id="panel-coffee" role="tabpanel">
+          <div class="prod-group">
+            <h4>Кофе в зёрнах и молотый</h4>
+            <div class="prod-grid">
+              <div class="prod-card" data-id="face-to-face" data-name="FACE to FACE Speciale" data-price="1395" data-unit="кг">
+                <span class="prod-tag">Хит</span>
+                <h5>FACE to FACE Speciale</h5>
+                <p>100% арабика, средняя обжарка, зерно</p>
+                <div class="prod-price"><span class="p-new">1 395 ₽</span><span class="p-old">1 895 ₽</span><span class="p-unit">/кг</span></div>
+                <button class="btn-add" data-add>В корзину</button>
+              </div>
+              <div class="prod-card" data-id="brazil-serrado" data-name="Бразилия Серрадо" data-price="1590" data-unit="кг">
+                <h5>Бразилия Серрадо</h5>
+                <p>100% арабика</p>
+                <div class="prod-price"><span class="p-new">от 1 590 ₽</span><span class="p-unit">/кг</span></div>
+                <button class="btn-add" data-add>В корзину</button>
+              </div>
+              <div class="prod-card">
+                <h5>Дрип-кофе порционный</h5>
+                <p>Для офиса и HoReCa, набор пакетиков</p>
+                <div class="prod-price"><span class="p-unit">цена по объёму</span></div>
+                <a href="#cta" class="btn-quote">Узнать цену</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-group">
+            <h4>Капсулы и чалды</h4>
+            <div class="prod-grid">
+              <div class="prod-card" data-id="lb-crema-lungo" data-name="LB Caffe Crema Lungo" data-price="4490" data-unit="уп.">
+                <h5>LB Caffe Crema Lungo</h5>
+                <p>Капсулы, коробка</p>
+                <div class="prod-price"><span class="p-new">4 490 ₽</span></div>
+                <button class="btn-add" data-add>В корзину</button>
+              </div>
+              <div class="prod-card" data-id="aroma-classica" data-name="Aroma Classica" data-price="5350" data-unit="уп.">
+                <h5>Aroma Classica</h5>
+                <p>Чалды, 150 шт в упаковке</p>
+                <div class="prod-price"><span class="p-new">5 350 ₽</span></div>
+                <button class="btn-add" data-add>В корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="prod-group">
+            <h4>Сиропы, топпинги и барные аксессуары</h4>
+            <div class="prod-grid">
+              <div class="prod-card" data-id="syrup-lime" data-name="Сироп 1883 Лайм" data-price="997" data-unit="л">
+                <h5>Сироп 1883 Лайм</h5>
+                <p>1 л</p>
+                <div class="prod-price"><span class="p-new">997 ₽</span></div>
+                <button class="btn-add" data-add>В корзину</button>
+              </div>
+              <div class="prod-card" data-id="syrup-rose" data-name="Сироп 1883 Роза" data-price="997" data-unit="л">
+                <h5>Сироп 1883 Роза</h5>
+                <p>1 л</p>
+                <div class="prod-price"><span class="p-new">997 ₽</span></div>
+                <button class="btn-add" data-add>В корзину</button>
+              </div>
+              <div class="prod-card" data-id="hot-chocolate" data-name="Горячий шоколад WTS?!" data-price="1390" data-unit="уп.">
+                <h5>Горячий шоколад WTS?!</h5>
+                <p>80% какао, основа для бара</p>
+                <div class="prod-price"><span class="p-new">1 390 ₽</span></div>
+                <button class="btn-add" data-add>В корзину</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-tea" role="tabpanel" hidden>
+          <div class="prod-group">
+            <h4>Чай пакетированный и весовой</h4>
+            <div class="prod-grid">
+              <div class="prod-card" data-id="tea-mrbrown" data-name="Mr.Brown, зелёный с жасмином" data-price="1190" data-unit="уп.">
+                <h5>Mr.Brown, зелёный с жасмином</h5>
+                <p>Пакетированный, 2 г × N</p>
+                <div class="prod-price"><span class="p-new">1 190 ₽</span></div>
+                <button class="btn-add" data-add>В корзину</button>
+              </div>
+              <div class="prod-card" data-id="tea-earlgrey" data-name="Эрл Грей" data-price="195" data-unit="уп.">
+                <h5>Эрл Грей</h5>
+                <p>Чёрный чай, 25 пакетиков</p>
+                <div class="prod-price"><span class="p-new">195 ₽</span></div>
+                <button class="btn-add" data-add>В корзину</button>
+              </div>
+              <div class="prod-card">
+                <h5>Крупнолистовой чай</h5>
+                <p>Ассортимент сортов, развес на вынос</p>
+                <div class="prod-price"><span class="p-unit">цена по весу</span></div>
+                <a href="#cta" class="btn-quote">Узнать цену</a>
+              </div>
+            </div>
+          </div>
+          <div class="prod-group">
+            <h4>Фильтр-пакеты и упаковка</h4>
+            <div class="prod-grid">
+              <div class="prod-card" data-id="filter-bag" data-name="Фильтр-пакет с zip-lock" data-price="25" data-unit="шт">
+                <h5>Фильтр-пакет с zip-lock</h5>
+                <p>Металлизированный, 250 г</p>
+                <div class="prod-price"><span class="p-new">25 ₽</span></div>
+                <button class="btn-add" data-add>В корзину</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tab-panel" id="panel-service" role="tabpanel" hidden>
+          <div class="prod-group">
+            <h4>Аренда и продажа кофемашин</h4>
+            <div class="prod-grid">
+              <div class="prod-card" data-id="proxima-minibar" data-name="PROXIMA MiniBar S1 (аренда/мес)" data-price="12000" data-unit="мес">
+                <span class="prod-tag">Акция</span>
+                <h5>PROXIMA MiniBar S1</h5>
+                <p>Суперавтомат, аренда в месяц</p>
+                <div class="prod-price"><span class="p-new">12 000 ₽</span><span class="p-old">15 000 ₽</span></div>
+                <button class="btn-add" data-add>В корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="prod-group">
+            <h4>Обслуживание, ремонт и химия</h4>
+            <div class="prod-grid">
+              <div class="prod-card">
+                <h5>Ремонт и ТО кофемашин</h5>
+                <p>Диагностика, чистка, оригинальные запчасти</p>
+                <div class="prod-price"><span class="p-unit">по заявке</span></div>
+                <a href="#cta" class="btn-quote">Узнать цену</a>
+              </div>
+              <div class="prod-card" data-id="cleaner-powder" data-name="Средство от кофейных масел" data-price="990" data-unit="уп.">
+                <h5>Средство от кофейных масел</h5>
+                <p>Порошок для чистки, 1000 г</p>
+                <div class="prod-price"><span class="p-new">990 ₽</span></div>
+                <button class="btn-add" data-add>В корзину</button>
+              </div>
+            </div>
+          </div>
+          <div class="prod-group">
+            <h4>Выездной кофейный бар</h4>
+            <div class="prod-grid">
+              <div class="prod-card">
+                <h5>Кофе-бар на мероприятие</h5>
+                <p>Оборудование, зерно, бариста, логистика</p>
+                <div class="prod-price"><span class="p-unit">расчёт по брифу</span></div>
+                <a href="#cta" class="btn-quote">Узнать цену</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="promo">
+    <div class="wrap promo-inner reveal">
+      <div class="promo-text">
+        <p class="eyebrow eyebrow-light">Хит продаж</p>
+        <h2>FACE to FACE Speciale</h2>
+        <p>Новый вкус без кислинки и горечи. 100% арабика, средняя обжарка — универсальный купаж под эспрессо и фильтр.</p>
+        <div class="promo-price"><span class="price-new">1 395 ₽</span><span class="price-old">1 895 ₽</span><span class="price-unit">/ кг</span></div>
+        <a href="#cta" class="btn btn-accent">Узнать цену опт</a>
+      </div>
+      <div class="promo-visual" aria-hidden="true">
+        <div class="bean" style="--x:10%;--y:20%;--s:1"></div>
+        <div class="bean" style="--x:60%;--y:10%;--s:0.7"></div>
+        <div class="bean" style="--x:35%;--y:55%;--s:1.3"></div>
+        <div class="bean" style="--x:75%;--y:60%;--s:0.9"></div>
+        <div class="bean" style="--x:15%;--y:78%;--s:0.8"></div>
+        <div class="bean" style="--x:80%;--y:25%;--s:1.1"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="service">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Оборудование и сервис</p>
+        <h2>Не только кофе — полное решение для точки</h2>
+      </div>
+      <div class="service-grid">
+        <div class="service-card reveal" id="rent">
+          <span class="service-num">01</span>
+          <h3>Аренда кофемашин</h3>
+          <p>Суперавтоматы и профессиональные кофемашины в аренду — без больших вложений на старте. Обслуживание включено.</p>
+          <a href="#cta" class="link-arrow">Подобрать модель →</a>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">02</span>
+          <h3>Сервис и ремонт</h3>
+          <p>Диагностика, чистка, ремонт и плановое ТО кофемашин и кофемолок. Оригинальные запчасти и химия для очистки.</p>
+          <a href="#cta" class="link-arrow">Вызвать мастера →</a>
+        </div>
+        <div class="service-card reveal">
+          <span class="service-num">03</span>
+          <h3>Выездной кофейный бар</h3>
+          <p>Кофе-бар на мероприятие: оборудование, зёрна, бариста и полная логистика под ваш формат.</p>
+          <a href="#cta" class="link-arrow">Рассчитать мероприятие →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="advantages" id="about">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Почему ИТАЛКОФЕ</p>
+        <h2>Работаем как поставщик, а не просто магазин</h2>
+      </div>
+      <div class="adv-grid">
+        <div class="adv-item reveal">
+          <span class="adv-index">01</span>
+          <h3>Оптовые цены</h3>
+          <p>Прямые закупки без наценок посредников — выгодная цена от кг и от коробки.</p>
+        </div>
+        <div class="adv-item reveal">
+          <span class="adv-index">02</span>
+          <h3>Быстрая доставка</h3>
+          <p>Доставка по Екатеринбургу и области, отгрузка день в день по будням.</p>
+        </div>
+        <div class="adv-item reveal">
+          <span class="adv-index">03</span>
+          <h3>Сервис и гарантия</h3>
+          <p>Своя сервисная служба: ремонт, ТО и запчасти для любых кофемашин.</p>
+        </div>
+        <div class="adv-item reveal">
+          <span class="adv-index">04</span>
+          <h3>Индивидуальный подбор</h3>
+          <p>Поможем собрать ассортимент и оборудование под формат и бюджет заведения.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section" id="cta">
+    <div class="wrap cta-inner reveal">
+      <div class="cta-copy">
+        <h2>Подберём кофе и оборудование под ваш бизнес</h2>
+        <p>Оставьте заявку — перезвоним в течение рабочего дня и подготовим предложение под вашу точку.</p>
+        <ul class="cta-points">
+          <li>Расчёт стоимости под объём закупки</li>
+          <li>Подбор кофемашины в аренду или покупку</li>
+          <li>Бесплатная консультация по ассортименту</li>
+        </ul>
+      </div>
+      <form class="cta-form" id="ctaForm">
+        <label>Имя<input type="text" name="name" placeholder="Как к вам обращаться" required></label>
+        <label>Телефон<input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required></label>
+        <label>Комментарий<textarea name="comment" rows="3" placeholder="Что интересует: кофе, аренда, сервис…"></textarea></label>
+        <button type="submit" class="btn btn-accent btn-full">Отправить заявку</button>
+        <p class="form-note">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+        <p class="form-success" id="formSuccess" hidden>Спасибо! Заявка отправлена — мы скоро свяжемся с вами.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer" id="contacts">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">
+        <svg class="logo-mark" width="36" height="36" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="20" r="19" fill="rgba(251,243,231,0.06)" stroke="rgba(251,243,231,0.16)"/>
+          <path d="M15.3 12.7c1.3-1.6.2-2.5-.3-3.8" stroke="#FBF3E7" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <path d="M20.3 12.7c1.3-1.6.2-2.5-.3-3.8" stroke="#FBF3E7" stroke-width="1.4" fill="none" stroke-linecap="round" opacity="0.5"/>
+          <path d="M11 15h15l-1.1 11.2a6.5 4 0 0 1-12.8 0z" fill="#FBF3E7"/>
+          <path d="M25.8 18.3h2a2.9 2.9 0 0 1 0 5.8h-1.4" fill="none" stroke="#FBF3E7" stroke-width="2" stroke-linecap="round"/>
+          <rect x="9" y="27.6" width="20" height="2.1" rx="1.05" fill="#FBF3E7"/>
+        </svg>
+        <span class="logo-text light">ИТАЛКОФЕ</span>
+      </div>
+      <p>Кофе, оборудование и сервис для кофеен и HoReCa в Екатеринбурге.</p>
+      <ul class="footer-directions">
+        <li><span class="dir-dot dir-coffee"></span>Кофе</li>
+        <li><span class="dir-dot dir-tea"></span>Чай</li>
+        <li><span class="dir-dot dir-service"></span>Сервис</li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Каталог</h4>
+      <a href="#catalog">Кофе в зёрнах и молотый</a>
+      <a href="#catalog">Капсулы и чалды</a>
+      <a href="#catalog">Сиропы и топпинги</a>
+      <a href="#catalog">Чай и аксессуары</a>
+      <a href="#rent">Аренда кофемашин</a>
+      <a href="#service">Сервис и ремонт</a>
+    </div>
+    <div class="footer-col">
+      <h4>Контакты</h4>
+      <a href="tel:+73433110235">+7 343 311‑02‑35</a>
+      <a href="tel:+79623407854">+7 962 340‑78‑54</a>
+      <a href="mailto:italkofe@mail.ru">italkofe@mail.ru</a>
+      <p class="footer-address">г. Екатеринбург,<br>ул. Мамина‑Сибиряка, д. 51, 1 этаж</p>
+      <p class="footer-hours">Пн–Пт: 9:30–18:30<br>Сб–Вс: выходной</p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© ИТАЛКОФЕ, <span id="year">2026</span>. Все права защищены.</p>
+    <p>Концепт редизайна · демо-страница</p>
+  </div>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+  <div class="cart-view" id="cartView">
+    <div class="cart-head">
+      <h3>Корзина</h3>
+      <button class="cart-close" id="cartClose" aria-label="Закрыть корзину">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <p class="cart-empty" id="cartEmpty">Пока пусто — добавьте товары из каталога.</p>
+    <div class="cart-foot" id="cartFoot" hidden>
+      <div class="cart-total"><span>Итого</span><strong id="cartTotal">0 ₽</strong></div>
+      <p class="cart-note">Ориентировочная сумма — точную цену и наличие подтвердит менеджер.</p>
+      <button class="btn btn-accent btn-full" id="cartCheckoutBtn">Оформить заказ</button>
+    </div>
+  </div>
+
+  <div class="cart-view" id="checkoutView" hidden>
+    <div class="cart-head">
+      <button class="cart-back" id="checkoutBack" aria-label="Назад в корзину">←</button>
+      <h3>Оформление заказа</h3>
+      <button class="cart-close" id="checkoutClose" aria-label="Закрыть">✕</button>
+    </div>
+    <form class="cart-checkout-form" id="checkoutForm">
+      <div class="checkout-summary" id="checkoutSummary"></div>
+      <label>Имя<input type="text" name="name" placeholder="Как к вам обращаться" required></label>
+      <label>Телефон<input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required></label>
+      <label>Комментарий<textarea name="comment" rows="2" placeholder="Адрес доставки, пожелания…"></textarea></label>
+      <button type="submit" class="btn btn-accent btn-full">Подтвердить заказ</button>
+      <p class="form-note">Это демо-оформление: заявка не отправляется реально, менеджер свяжется по указанному телефону.</p>
+    </form>
+  </div>
+
+  <div class="cart-view" id="checkoutSuccessView" hidden>
+    <div class="cart-success">
+      <div class="cart-success-icon">✓</div>
+      <h3>Заказ оформлен</h3>
+      <p>Спасибо! Мы свяжемся с вами, чтобы подтвердить наличие и стоимость позиций.</p>
+      <button class="btn btn-ghost" id="cartSuccessClose">Закрыть</button>
+    </div>
+  </div>
+</aside>
+
+<button class="advisor-btn" id="advisorBtn" aria-label="Подбор кофе и чая">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 9h13l-.9 8.4A2 2 0 0 1 14.1 19H7.9a2 2 0 0 1-2-1.6z" fill="#FBF3E7"/><path d="M17.2 11h1.6a2.2 2.2 0 0 1 0 4.4h-1" stroke="#FBF3E7" stroke-width="1.6" fill="none" stroke-linecap="round"/><path d="M9 6.4c.9-1.1.1-1.7-.2-2.6M13 6.4c.9-1.1.1-1.7-.2-2.6" stroke="#FBF3E7" stroke-width="1.3" fill="none" stroke-linecap="round" opacity="0.8"/></svg>
+  <span class="advisor-pulse"></span>
+</button>
+
+<div class="advisor-panel" id="advisorPanel" aria-hidden="true">
+  <div class="advisor-head">
+    <div>
+      <h3>Подбор кофе и чая</h3>
+      <p>Умный поиск по каталогу ИТАЛКОФЕ — без выдуманных товаров</p>
+    </div>
+    <button class="cart-close" id="advisorClose" aria-label="Закрыть">✕</button>
+  </div>
+  <div class="advisor-messages" id="advisorMessages"></div>
+  <div class="advisor-chips" id="advisorChips"></div>
+  <form class="advisor-form" id="advisorForm">
+    <input type="text" id="advisorInput" placeholder="Например: люблю мягкий кофе без кислинки" autocomplete="off">
+    <button type="submit" aria-label="Спросить">➤</button>
+  </form>
+</div>
+
+<script src="script.js?v=6"></script>
+</body>
+</html>
