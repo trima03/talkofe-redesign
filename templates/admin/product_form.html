@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>{{ 'Изменить товар' if product else 'Новый товар' }} · ИТАЛКОФЕ admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="admin-page">
+  {% include "admin/_bar.html" %}
+  <div class="admin-wrap">
+    <div class="admin-head">
+      <h1>{{ 'Изменить товар' if product else 'Новый товар' }}</h1>
+      <a href="{{ url_for('admin_products') }}" class="btn btn-ghost">← К списку</a>
+    </div>
+
+    <form class="admin-form" method="post">
+      <div class="admin-form-grid">
+        <label>Вкладка на витрине
+          <select name="category">
+            {% for value, label in [('coffee','Кофе'), ('tea','Чай'), ('service','Сервис')] %}
+            <option value="{{ value }}" {% if product and product.category == value %}selected{% endif %}>{{ label }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label>Тип для советчика
+          <select name="advisor_type">
+            {% for value, label in [('coffee','Кофе'), ('tea','Чай'), ('other','Другое')] %}
+            <option value="{{ value }}" {% if product and product.advisor_type == value %}selected{% endif %}>{{ label }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <label class="full">Раздел (подпись группы на витрине)
+          <input type="text" name="group_name" value="{{ product.group_name if product else '' }}" placeholder="Кофе в зёрнах и молотый" required>
+        </label>
+        <label class="full">Название
+          <input type="text" name="name" value="{{ product.name if product else '' }}" required>
+        </label>
+        <label class="full">Описание (подпись под названием на карточке)
+          <input type="text" name="description" value="{{ product.description if product else '' }}">
+        </label>
+        <label>Цена, ₽ (пусто = «цена по запросу»)
+          <input type="number" name="price" value="{{ product.price if product and product.price is not none else '' }}">
+        </label>
+        <label>Старая цена, ₽ (для зачёркнутой)
+          <input type="number" name="old_price" value="{{ product.old_price if product and product.old_price is not none else '' }}">
+        </label>
+        <label>Единица (кг / уп. / шт / мес)
+          <input type="text" name="unit" value="{{ product.unit if product and product.unit else '' }}">
+        </label>
+        <label>Бейдж (Хит / Акция)
+          <input type="text" name="badge" value="{{ product.badge if product and product.badge else '' }}">
+        </label>
+        <label class="full">Текст вместо цены (если цена пустая)
+          <input type="text" name="price_note" value="{{ product.price_note if product and product.price_note else '' }}" placeholder="цена по запросу / по заявке / расчёт по брифу">
+        </label>
+        <label class="admin-checkbox full">
+          <input type="checkbox" name="is_from_price" {% if product and product.is_from_price %}checked{% endif %}>
+          Показывать цену с префиксом «от »
+        </label>
+        <label class="full">Ключевые слова для советчика (через запятую)
+          <textarea name="advisor_tags" rows="2">{{ product.advisor_tags if product else '' }}</textarea>
+        </label>
+        <label class="full">Почему рекомендовать (текст в ответе советчика)
+          <textarea name="advisor_why" rows="2">{{ product.advisor_why if product else '' }}</textarea>
+        </label>
+        <label>Порядок сортировки
+          <input type="number" name="sort_order" value="{{ product.sort_order if product else 0 }}">
+        </label>
+      </div>
+      <div class="admin-form-actions">
+        <button type="submit" class="btn btn-accent">Сохранить</button>
+        <a href="{{ url_for('admin_products') }}" class="btn btn-ghost">Отмена</a>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

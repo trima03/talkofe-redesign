@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Заявки · ИТАЛКОФЕ admin</title>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+<div class="admin-page">
+  {% include "admin/_bar.html" %}
+  <div class="admin-wrap">
+    <div class="admin-head">
+      <h1>Заявки ({{ orders|length }})</h1>
+    </div>
+
+    <div style="overflow-x:auto">
+    <table class="admin-table">
+      <thead>
+        <tr>
+          <th>Когда</th>
+          <th>Имя</th>
+          <th>Телефон</th>
+          <th>Товары</th>
+          <th>Сумма</th>
+          <th>Комментарий</th>
+          <th>Статус</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for order in orders %}
+        <tr>
+          <td>{{ order.created_at.strftime('%d.%m.%Y %H:%M') }}</td>
+          <td>{{ order.name }}</td>
+          <td><a href="tel:{{ order.phone }}">{{ order.phone }}</a></td>
+          <td class="order-items">
+            {% if order.items %}
+              {% for item in order.items %}{{ item.product_name_snapshot }} × {{ item.qty }}{% if not loop.last %}, {% endif %}{% endfor %}
+            {% else %}
+              — (заявка на звонок, без товаров)
+            {% endif %}
+          </td>
+          <td>{% if order.items %}{{ order.total|rub }}{% else %}—{% endif %}</td>
+          <td class="order-items">{{ order.comment or '—' }}</td>
+          <td>
+            <form method="post" action="{{ url_for('admin_order_status', order_id=order.id) }}">
+              <select name="status" onchange="this.form.submit()" class="status-pill status-{{ order.status }}">
+                {% for value, label in [('new','Новая'), ('contacted','Связались'), ('done','Закрыта')] %}
+                <option value="{{ value }}" {% if order.status == value %}selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+              </select>
+            </form>
+          </td>
+        </tr>
+        {% else %}
+        <tr><td colspan="7">Заявок пока нет.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

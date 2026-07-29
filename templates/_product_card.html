@@ -1,0 +1,21 @@
+{% if product.price %}
+<div class="prod-card" data-id="{{ product.id }}" data-name="{{ product.name }}" data-price="{{ product.price }}" data-unit="{{ product.unit or '' }}">
+  {% if product.badge %}<span class="prod-tag">{{ product.badge }}</span>{% endif %}
+  <h5>{{ product.name }}</h5>
+  <p>{{ product.description }}</p>
+  <div class="prod-price">
+    <span class="p-new">{% if product.is_from_price %}от {% endif %}{{ product.price|rub }}</span>
+    {% if product.old_price %}<span class="p-old">{{ product.old_price|rub }}</span>{% endif %}
+    {% if product.unit %}<span class="p-unit">/{{ product.unit }}</span>{% endif %}
+  </div>
+  <button class="btn-add" data-add>В корзину</button>
+</div>
+{% else %}
+<div class="prod-card">
+  {% if product.badge %}<span class="prod-tag">{{ product.badge }}</span>{% endif %}
+  <h5>{{ product.name }}</h5>
+  <p>{{ product.description }}</p>
+  <div class="prod-price"><span class="p-unit">{{ product.price_note or 'цена по запросу' }}</span></div>
+  <a href="#cta" class="btn-quote">Узнать цену</a>
+</div>
+{% endif %}

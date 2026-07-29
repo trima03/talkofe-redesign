@@ -8,7 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=2">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
 
@@ -117,150 +117,36 @@
       <div class="tab-panels reveal">
 
         <div class="tab-panel active" id="panel-coffee" role="tabpanel">
+          {% for group_name, items in catalog.coffee.items() %}
           <div class="prod-group">
-            <h4>Кофе в зёрнах и молотый</h4>
+            <h4>{{ group_name }}</h4>
             <div class="prod-grid">
-              <div class="prod-card" data-id="face-to-face" data-name="FACE to FACE Speciale" data-price="1395" data-unit="кг">
-                <span class="prod-tag">Хит</span>
-                <h5>FACE to FACE Speciale</h5>
-                <p>100% арабика, средняя обжарка, зерно</p>
-                <div class="prod-price"><span class="p-new">1 395 ₽</span><span class="p-old">1 895 ₽</span><span class="p-unit">/кг</span></div>
-                <button class="btn-add" data-add>В корзину</button>
-              </div>
-              <div class="prod-card" data-id="brazil-serrado" data-name="Бразилия Серрадо" data-price="1590" data-unit="кг">
-                <h5>Бразилия Серрадо</h5>
-                <p>100% арабика</p>
-                <div class="prod-price"><span class="p-new">от 1 590 ₽</span><span class="p-unit">/кг</span></div>
-                <button class="btn-add" data-add>В корзину</button>
-              </div>
-              <div class="prod-card">
-                <h5>Дрип-кофе порционный</h5>
-                <p>Для офиса и HoReCa, набор пакетиков</p>
-                <div class="prod-price"><span class="p-unit">цена по объёму</span></div>
-                <a href="#cta" class="btn-quote">Узнать цену</a>
-              </div>
+              {% for product in items %}{% include "_product_card.html" %}{% endfor %}
             </div>
           </div>
-          <div class="prod-group">
-            <h4>Капсулы и чалды</h4>
-            <div class="prod-grid">
-              <div class="prod-card" data-id="lb-crema-lungo" data-name="LB Caffe Crema Lungo" data-price="4490" data-unit="уп.">
-                <h5>LB Caffe Crema Lungo</h5>
-                <p>Капсулы, коробка</p>
-                <div class="prod-price"><span class="p-new">4 490 ₽</span></div>
-                <button class="btn-add" data-add>В корзину</button>
-              </div>
-              <div class="prod-card" data-id="aroma-classica" data-name="Aroma Classica" data-price="5350" data-unit="уп.">
-                <h5>Aroma Classica</h5>
-                <p>Чалды, 150 шт в упаковке</p>
-                <div class="prod-price"><span class="p-new">5 350 ₽</span></div>
-                <button class="btn-add" data-add>В корзину</button>
-              </div>
-            </div>
-          </div>
-          <div class="prod-group">
-            <h4>Сиропы, топпинги и барные аксессуары</h4>
-            <div class="prod-grid">
-              <div class="prod-card" data-id="syrup-lime" data-name="Сироп 1883 Лайм" data-price="997" data-unit="л">
-                <h5>Сироп 1883 Лайм</h5>
-                <p>1 л</p>
-                <div class="prod-price"><span class="p-new">997 ₽</span></div>
-                <button class="btn-add" data-add>В корзину</button>
-              </div>
-              <div class="prod-card" data-id="syrup-rose" data-name="Сироп 1883 Роза" data-price="997" data-unit="л">
-                <h5>Сироп 1883 Роза</h5>
-                <p>1 л</p>
-                <div class="prod-price"><span class="p-new">997 ₽</span></div>
-                <button class="btn-add" data-add>В корзину</button>
-              </div>
-              <div class="prod-card" data-id="hot-chocolate" data-name="Горячий шоколад WTS?!" data-price="1390" data-unit="уп.">
-                <h5>Горячий шоколад WTS?!</h5>
-                <p>80% какао, основа для бара</p>
-                <div class="prod-price"><span class="p-new">1 390 ₽</span></div>
-                <button class="btn-add" data-add>В корзину</button>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
 
         <div class="tab-panel" id="panel-tea" role="tabpanel" hidden>
+          {% for group_name, items in catalog.tea.items() %}
           <div class="prod-group">
-            <h4>Чай пакетированный и весовой</h4>
+            <h4>{{ group_name }}</h4>
             <div class="prod-grid">
-              <div class="prod-card" data-id="tea-mrbrown" data-name="Mr.Brown, зелёный с жасмином" data-price="1190" data-unit="уп.">
-                <h5>Mr.Brown, зелёный с жасмином</h5>
-                <p>Пакетированный, 2 г × N</p>
-                <div class="prod-price"><span class="p-new">1 190 ₽</span></div>
-                <button class="btn-add" data-add>В корзину</button>
-              </div>
-              <div class="prod-card" data-id="tea-earlgrey" data-name="Эрл Грей" data-price="195" data-unit="уп.">
-                <h5>Эрл Грей</h5>
-                <p>Чёрный чай, 25 пакетиков</p>
-                <div class="prod-price"><span class="p-new">195 ₽</span></div>
-                <button class="btn-add" data-add>В корзину</button>
-              </div>
-              <div class="prod-card">
-                <h5>Крупнолистовой чай</h5>
-                <p>Ассортимент сортов, развес на вынос</p>
-                <div class="prod-price"><span class="p-unit">цена по весу</span></div>
-                <a href="#cta" class="btn-quote">Узнать цену</a>
-              </div>
+              {% for product in items %}{% include "_product_card.html" %}{% endfor %}
             </div>
           </div>
-          <div class="prod-group">
-            <h4>Фильтр-пакеты и упаковка</h4>
-            <div class="prod-grid">
-              <div class="prod-card" data-id="filter-bag" data-name="Фильтр-пакет с zip-lock" data-price="25" data-unit="шт">
-                <h5>Фильтр-пакет с zip-lock</h5>
-                <p>Металлизированный, 250 г</p>
-                <div class="prod-price"><span class="p-new">25 ₽</span></div>
-                <button class="btn-add" data-add>В корзину</button>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
 
         <div class="tab-panel" id="panel-service" role="tabpanel" hidden>
+          {% for group_name, items in catalog.service.items() %}
           <div class="prod-group">
-            <h4>Аренда и продажа кофемашин</h4>
+            <h4>{{ group_name }}</h4>
             <div class="prod-grid">
-              <div class="prod-card" data-id="proxima-minibar" data-name="PROXIMA MiniBar S1 (аренда/мес)" data-price="12000" data-unit="мес">
-                <span class="prod-tag">Акция</span>
-                <h5>PROXIMA MiniBar S1</h5>
-                <p>Суперавтомат, аренда в месяц</p>
-                <div class="prod-price"><span class="p-new">12 000 ₽</span><span class="p-old">15 000 ₽</span></div>
-                <button class="btn-add" data-add>В корзину</button>
-              </div>
+              {% for product in items %}{% include "_product_card.html" %}{% endfor %}
             </div>
           </div>
-          <div class="prod-group">
-            <h4>Обслуживание, ремонт и химия</h4>
-            <div class="prod-grid">
-              <div class="prod-card">
-                <h5>Ремонт и ТО кофемашин</h5>
-                <p>Диагностика, чистка, оригинальные запчасти</p>
-                <div class="prod-price"><span class="p-unit">по заявке</span></div>
-                <a href="#cta" class="btn-quote">Узнать цену</a>
-              </div>
-              <div class="prod-card" data-id="cleaner-powder" data-name="Средство от кофейных масел" data-price="990" data-unit="уп.">
-                <h5>Средство от кофейных масел</h5>
-                <p>Порошок для чистки, 1000 г</p>
-                <div class="prod-price"><span class="p-new">990 ₽</span></div>
-                <button class="btn-add" data-add>В корзину</button>
-              </div>
-            </div>
-          </div>
-          <div class="prod-group">
-            <h4>Выездной кофейный бар</h4>
-            <div class="prod-grid">
-              <div class="prod-card">
-                <h5>Кофе-бар на мероприятие</h5>
-                <p>Оборудование, зерно, бариста, логистика</p>
-                <div class="prod-price"><span class="p-unit">расчёт по брифу</span></div>
-                <a href="#cta" class="btn-quote">Узнать цену</a>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
         </div>
 
       </div>
@@ -363,7 +249,7 @@
         <label>Телефон<input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required></label>
         <label>Комментарий<textarea name="comment" rows="3" placeholder="Что интересует: кофе, аренда, сервис…"></textarea></label>
         <button type="submit" class="btn btn-accent btn-full">Отправить заявку</button>
-        <p class="form-note">Нажимая на кнопку, вы соглашаетесь с политикой конфиденциальности</p>
+        <p class="form-note">Заявка приходит нашему менеджеру — перезвоним по указанному телефону.</p>
         <p class="form-success" id="formSuccess" hidden>Спасибо! Заявка отправлена — мы скоро свяжемся с вами.</p>
       </form>
     </div>
@@ -412,7 +298,7 @@
   </div>
   <div class="wrap footer-bottom">
     <p>© ИТАЛКОФЕ, <span id="year">2026</span>. Все права защищены.</p>
-    <p>Концепт редизайна · демо-страница</p>
+    <p><a href="{{ url_for('admin_login') }}">Вход для сотрудников</a></p>
   </div>
 </footer>
 
@@ -444,7 +330,7 @@
       <label>Телефон<input type="tel" name="phone" placeholder="+7 (___) ___-__-__" required></label>
       <label>Комментарий<textarea name="comment" rows="2" placeholder="Адрес доставки, пожелания…"></textarea></label>
       <button type="submit" class="btn btn-accent btn-full">Подтвердить заказ</button>
-      <p class="form-note">Это демо-оформление: заявка не отправляется реально, менеджер свяжется по указанному телефону.</p>
+      <p class="form-note">Заказ уходит менеджеру — он свяжется с вами для подтверждения наличия и оплаты.</p>
     </form>
   </div>
 
@@ -479,6 +365,8 @@
   </form>
 </div>
 
-<script src="script.js?v=6"></script>
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<script src="{{ url_for('static', filename='js/cart.js') }}"></script>
+<script src="{{ url_for('static', filename='js/advisor.js') }}"></script>
 </body>
 </html>
