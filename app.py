@@ -16,30 +16,35 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 from flask import Flask, jsonify, redirect, render_template, request, session, url_for
+from sqlalchemy import text
 
+from hosting_config import configure
 from models import Order, OrderItem, Product, db
 
 BASE_DIR = Path(__file__).resolve().parent
 load_dotenv(BASE_DIR / ".env")
 
 app = Flask(__name__)
-app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "dev-secret-change-me")
-app.config["ADMIN_PASSWORD"] = os.environ.get("ADMIN_PASSWORD", "italkofe-admin")
+configure(app, os.environ, BASE_DIR)
 app.config["SEND_FILE_MAX_AGE_DEFAULT"] = 60 * 60 * 24 * 30
-
-db_url = os.environ.get("DATABASE_URL")
-if db_url and db_url.startswith("postgres://"):
-    db_url = db_url.replace("postgres://", "postgresql://", 1)
-if not db_url:
-    (BASE_DIR / "instance").mkdir(exist_ok=True)
-    db_url = f"sqlite:///{BASE_DIR / 'instance' / 'italkofe.db'}"
-app.config["SQLALCHEMY_DATABASE_URI"] = db_url
-app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db.init_app(app)
 
-with app.app_context():
+if not app.config["HOSTED"]:
+    with app.app_context():
+        db.create_all()
+
+
+@app.cli.command("init-db")
+def init_db():
+    """Create missing tables once; keep Supabase Data API access disabled."""
     db.create_all()
+    if db.engine.dialect.name == "postgresql":
+        # No public API policies: only the trusted backend DB role may access data.
+        for table in ("products", "orders", "order_items"):
+            db.session.execute(text(f'ALTER TABLE "{table}" ENABLE ROW LEVEL SECURITY'))
+        db.session.commit()
+    print("Database initialized. Existing data was preserved.")
 
 
 @app.template_filter("rub")
@@ -287,4 +292,5 @@ def admin_order_status(order_id):
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
-    app.run(debug=True, host="0.0.0.0", port=port)
+    app.run(debug=os.environ.get("FLASK_DEBUG") == "1", host="0.0.0.0", port=port)
+
